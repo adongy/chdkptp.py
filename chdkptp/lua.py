@@ -34,7 +34,7 @@ class LuaContext(object):
 
     def _parse_rval(self, rval):
         # Check for errors from checked calls and for internal CHDK errors
-        if isinstance(rval, tuple) and len(tuple) >= 3:
+        if isinstance(rval, tuple) and len(rval) >= 3:
             if not rval[0] or len(rval) == 4 and rval[1] is None:
                 self._raise_exception(rval[2])
             else:
